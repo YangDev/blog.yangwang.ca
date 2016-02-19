@@ -1,0 +1,100 @@
+html, body{
+	width:100%;
+	height:100%;
+	margin:0;
+	padding: 0;
+	position:fixed;
+}
+
+.container{
+	margin:auto;
+	width:100%;
+	height:100%;
+}
+#input{
+	background-color:rgb(222,222,222);
+	width:100%;
+	margin:0;
+	margin-top: 10px;
+	bottom:0;
+}
+#image{
+	display:none;
+}
+
+.buttonContainer{
+	width:100%;
+	height:40px;
+	padding:0px;
+	display:inline-block;
+	
+}
+.long{
+	width:100%;
+}
+.smallButton{
+	width:40px;
+	height:20px;
+	background-color:white;
+	display:inline-block;
+	border:2px solid rgb(204,204,204);
+	margin:0px;
+	text-align: center;
+	padding: 10px;
+	cursor:pointer;
+	float: left;
+}
+.smallButton:hover{
+	background-color:rgb(221,221,221);
+	border:2px solid rgb(204,204,204);
+}
+.smallButton:active{
+	background-color:rgb(100,100,121);
+	border:2px solid rgb(204,204,204);
+}
+.active{
+	background-color:rgb(79,157,215);
+	border:2px solid rgb(67,67,67);
+	color:white;
+}
+
+.input{
+	padding-top: 0px;
+	height:38px;
+	width: 40px;
+	font-size: 30px;
+	float: left;
+}
+.text{
+	display: inline-block;
+}
+.big{
+	font-size: 30px;
+}
+.red{
+	color:red;
+}
+.redBackground{
+	background-color:rgb(50,155,50);
+}
+.greenBackground{
+	background-color:rgb(205,33,55);
+}
+.blueBackground{
+	background-color:rgb(79,157,215);
+}
+.redBackground.smallButton:hover{
+	background-color:rgb(50,155,50);
+	opacity: 0.8;
+	border:2px solid rgb(204,204,204);
+}
+.greenBackground.smallButton:hover{
+	background-color:rgb(205,33,55);
+	opacity: 0.8;
+	border:2px solid rgb(204,204,204);
+}
+.blueBackground.smallButton:hover{
+	background-color:rgb(79,157,215);
+	opacity: 0.8;
+	border:2px solid rgb(204,204,204);
+}

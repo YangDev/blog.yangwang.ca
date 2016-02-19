@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+
+.tabs {
+    padding-top: 2px;
+    border-top: none !important;
+    border-bottom: none;
+    background-position: top;
+    background-size: 100% 1px;
+    background-repeat: no-repeat;
+    background: rgb(109, 189, 84);
+    color: white;
+}

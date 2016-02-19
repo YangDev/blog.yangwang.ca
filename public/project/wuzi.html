@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="wuziApp">
+<head>
+	<link href="/stylesheets/wuzi.css" rel="stylesheet" />
+    <script src="/lib/angular-1.5.0/angular.min.js"></script>
+	<script src="/lib/jquery-2.2.0.min.js"></script>
+	<script src="WuziService.js"></script>
+	<script src="wuzi.js"></script>
+</head>
+<body ng-controller="boardController">
+	<div class="board">
+		<svg style="width:100%;height:100%">
+			<defs>
+			    <filter id="f4" x="0" y="0" width="200%" height="200%">
+			      <feOffset result="offOut" in="SourceGraphic" dx="0" dy="4" />
+			      <feColorMatrix result="matrixOut" in="offOut" type="matrix"
+			      values="0.2 0 0 0 0 0 0.2 0 0 0 0 0 0.2 0 0 0 0 0 1 0" />
+			      <feGaussianBlur result="blurOut" in="matrixOut" stdDeviation="2" />
+			      <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+			    </filter>
+			</defs>
+			<line x1="90" y1="90" x2="810" y2="90"/>
+			<line x1="90" y1="270" x2="810" y2="270"/>
+			<line x1="90" y1="450" x2="810" y2="450"/>
+			<line x1="90" y1="630" x2="810" y2="630"/>
+			<line x1="90" y1="810" x2="810" y2="810"/>
+			<line x1="90" y1="90" x2="90" y2="810"/>
+			<line x1="270" y1="90" x2="270" y2="810"/>
+			<line x1="450" y1="90" x2="450" y2="810"/>
+			<line x1="630" y1="90" x2="630" y2="810"/>
+			<line x1="810" y1="90" x2="810" y2="810"/>
+			<circle ng-attr-cx="{{white.x}}" ng-attr-cy="{{white.y}}" ng-class="{op:white.selected}" r="60" stroke="black" fill="white" ng-click="selectWhite($index)" ng-repeat="white in whites" filter="url(#f4)"/>
+			<circle ng-attr-cx="{{black.x}}" ng-attr-cy="{{black.y}}" ng-class="{op:black.selected}" r="60" stroke="white"ng-click="selectBlack($index)" ng-repeat="black in blacks" filter="url(#f4)"/>
+			<circle ng-attr-cx="{{target.x}}" ng-attr-cy="{{target.y}}" r="60"  fill="green" style="opacity:0.2" ng-click="moveToTarget($index)" ng-repeat="target in targets" />
+		</svg>
+		<svg width="900">
+		<rect id="a1" x="10" y="10" width="40" height="20" stroke= "#000000" >
+		 <set begin="click" attributeName="fill" to="yellow" />
+		</rect>
+		<rect id="a3" x="10" y="30" width="40" height="20" stroke= "#000000" fill="grey" fill-opacity="0"/>
+		<circle id="a2" r="30" cx="50" cy="100" fill="orange" />
+   			<animate
+   				xlink:href="#a1"
+   				attributeName="x"
+	            from="10" 
+	            to="250"
+	            dur="1s"
+	            begin="click" 
+	            fill="freeze"
+           	/>
+           	<animate
+   				xlink:href="#a3"
+   				attributeName="x"
+	            from="10" 
+	            to="250"
+	            dur="1s"
+	            begin="click" 
+	            fill="freeze"
+           	/>
+  			<animate 
+	           xlink:href="#a2"
+	           attributeName="cx"
+	           from="50"
+	           to="450" 
+	           dur="1s"
+	           begin="click"
+	           fill="freeze" 
+           />
+		</svg>
+		
+	</div>
+	
+</body>
+</html>

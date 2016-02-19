@@ -1,0 +1,41 @@
+html, body{
+}
+body{
+	background-color: rgb(245,245,245);
+}
+.board{
+	margin:auto;
+	width:900px;
+	height:900px;
+	position: relative;
+	background-color: white;
+	box-shadow:-1px 1px 4px #888888;
+}
+.piece{
+	width:140px;
+	height:140px;
+	position: absolute;
+	border-radius:70px;
+	box-shadow:0px 3px 4px #888888;
+	transition: 0.5s;
+}
+
+.piece:hover{
+	opacity: 0.5;
+}
+.white{
+	background:red;
+}
+
+.black{
+	background:#000;
+}
+svg line{
+	stroke:rgb(255,0,0);
+	stroke-width:2;
+	position:absolute;
+}
+
+.op{
+	opacity: 0.8;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, 
+		maximum-scale=1.0" name='viewport' />
+	<link media="screen and (max-width:600px)" href="/stylesheets/recognitionPhone.css" rel="stylesheet">
+	<link media="screen and (min-width:600px)" href="/stylesheets/recognition.css" rel="stylesheet" >
+    <script src="/lib/angular-1.5.0/angular.min.js"></script>
+    <script src="/project/neural-network.js"></script>
+	<script src="/project/recognition.js"></script>
+	<title>手写识别</title>
+</head>
+<body ng-controller="pageController">
+	<div class="container">
+		<!--<div class="buttonContainer" style="display:none;">
+			<div ng-click="setModeLearn()" ng-class="{smallButton:true, active:tab1 === 1}">学习模式</div>
+			<div ng-click="setModeTrain()" ng-class="{smallButton:true, active:tab1 === 2}">识别模式</div>
+		</div>
+		<div class="buttonContainer">
+			<div ng-click="setModeAuto()" ng-class="{smallButton:true, active:tab2 === 2}">自动</div>
+			<div ng-click="setModeManual()" ng-class="{smallButton:true, active:tab2 === 1}">手动</div>
+		</div>
+		
+		
+	
+		<div class="buttonContainer long">
+			<div class="smallButton" ng-click="recognize()" >认字</div>
+			<div class="smallButton" ng-click="learn()" >学习</div>
+			<div class="smallButton" ng-click="add()" >添加</div>
+		</div>
+	-->
+	<h1 style="width:900px;">{{sample}}</h1>
+		<div style="width:900px;">
+			
+		<div class="buttonContainer long" ng-show="mode==2">
+			<h4 class="text" style="width:600px;">input this letter:</h4>
+			<input class="input" ng-model="inputLabel"></input>
+			<div class="smallButton blueBackground" ng-click="addNewSample()" >Submit</div>
+		</div>
+		
+		<div ng-show="mode==1">
+			<h3 class="text">
+				Did you write<div class="text big red">{{result}}</div>?
+			</h3>
+			<div class="smallButton greenBackground" ng-click="addOneSample()">Yes</div>
+			<div class="smallButton redBackground" ng-click="getLabel()">No</div>
+		</div>
+		</div>
+		<canvas id="input">不支持Canvas</canvas>
+		<canvas id="image"></canvas>
+		<p>Please write in the grey area</p>
+		<!--<img src="https://wi2pow-sn3302.files.1drv.com/y2p4k7VUCQjIObZNoIhzl8dog88-UuJrmfZsjefv9sx5DBGXCD7_ZB0LrwR1yyMIJXQduD2fTKmXy2My8ExqyGtOlDIozO6u1exLwRyero3IjeyWPRjYPxmag7Q8oeptFgrD_RgKJQca8VMoukJMm68mg/ggg.jpg?psid=1"></img>-->
+	</div>
+	
+
+	
+	
+	
+</body>
+</html>
